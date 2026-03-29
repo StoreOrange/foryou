@@ -8,94 +8,80 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
     background: black;
     color: white;
 }
 
-/* SLIDER */
-.swiper {
-    width: 100%;
+/* SECCIONES */
+.section {
     height: 100vh;
-}
-
-.slide {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 30px;
 }
 
 /* FONDO */
-.bg {
+.section img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.5);
+    z-index: -1;
+    filter: brightness(0.4);
+    transform: scale(1.1);
+}
+
+/* CONTENIDO */
+.content {
+    max-width: 650px;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 /* TEXTO */
-.content {
-    z-index: 2;
-    max-width: 600px;
-    opacity: 0;
-}
-
 h1 {
-    font-size: 2.3em;
+    font-size: 2.4em;
+    font-weight: 500;
 }
 
 p {
     margin-top: 20px;
-}
-
-/* ROSAS */
-.rose {
-    position: absolute;
-    width: 40px;
-    animation: float 6s infinite linear;
-}
-
-@keyframes float {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-100vh); }
-}
-
-/* BRILLO */
-.sparkle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: sparkle 3s infinite;
-}
-
-@keyframes sparkle {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+    font-size: 1.15em;
+    line-height: 1.7;
 }
 
 /* BOTÓN */
 button {
-    padding: 12px 25px;
+    margin-top: 30px;
+    padding: 12px 28px;
     border-radius: 30px;
     border: none;
     background: #ff4d6d;
     color: white;
+    font-size: 16px;
+}
+
+/* TRANSICIÓN */
+.fade {
+    transition: all 1.2s ease;
+}
+
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 </style>
 </head>
@@ -106,89 +92,96 @@ button {
 <source src="https://www.bensound.com/bensound-music/bensound-love.mp3">
 </audio>
 
-<div class="swiper">
-<div class="swiper-wrapper">
-
 <!-- INTRO -->
-<div class="swiper-slide slide">
-    <img class="bg" src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-    <div class="content">
+<div class="section" style="background:black;">
+    <div class="content fade visible">
         <h1>Hay algo que quiero decirte...</h1>
         <button onclick="start()">Toca aquí ❤️</button>
     </div>
 </div>
 
-<!-- SLIDE 1 -->
-<div class="swiper-slide slide">
-    <img class="bg" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-    <div class="content">
+<!-- SECCIÓN 1 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    <div class="content fade">
         <h1>El tiempo pasó...</h1>
-        <p>Pero nunca dejé de pensar en ti.</p>
+        <p>
+        Y la vida nos llevó por caminos distintos...<br>
+        decisiones, momentos, historias que no coincidieron.
+        </p>
     </div>
 </div>
 
-<!-- SLIDE 2 -->
-<div class="swiper-slide slide">
-    <img class="bg" src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
-    <div class="content">
-        <h1>La vida nos separó...</h1>
-        <p>Pero hoy… nos vuelve a unir ❤️</p>
+<!-- SECCIÓN 2 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div class="content fade">
+        <h1>Intentamos seguir adelante...</h1>
+        <p>
+        Cada quien construyó su mundo,<br>
+        pero algo dentro de mí… nunca cambió.
+        </p>
+    </div>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+    <div class="content fade">
+        <h1>Porque incluso cuando no estabas...</h1>
+        <p>
+        siempre había algo que me llevaba a ti,<br>
+        un recuerdo, una sensación… algo que no se fue.
+        </p>
+    </div>
+</div>
+
+<!-- SECCIÓN 4 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+    <div class="content fade">
+        <h1>Y ahora…</h1>
+        <p>
+        la vida, de alguna forma,<br>
+        nos pone otra vez en el mismo camino.
+        </p>
     </div>
 </div>
 
 <!-- FINAL -->
-<div class="swiper-slide slide">
-    <img class="bg" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
-    <div class="content">
-        <h1>¿Me das la oportunidad?</h1>
-        <p>De escribir algo bonito contigo...</p>
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1494783367193-149034c05e8f">
+    <div class="content fade">
+        <h1>Y esta vez no quiero dejarlo pasar...</h1>
+        <p>
+        No se trata del pasado,<br>
+        ni de lo que no fue…<br><br>
+        sino de lo que aún puede ser ❤️
+        </p>
     </div>
 </div>
 
-</div>
-</div>
-
 <script>
-let swiper = new Swiper(".swiper", {
-    direction: "horizontal",
-    speed: 1000,
-    parallax: true,
-});
-
-/* ANIMACIONES */
-swiper.on('slideChange', () => {
-    document.querySelectorAll(".content").forEach(el => {
-        gsap.to(el, {opacity: 0});
-    });
-
-    let active = document.querySelector(".swiper-slide-active .content");
-    gsap.to(active, {opacity: 1, y: -20, duration: 1});
-});
-
-/* INICIO */
 function start() {
     document.getElementById("music").play();
-    swiper.slideNext();
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
 }
 
-/* ROSAS */
-for(let i=0;i<20;i++){
-    let rose=document.createElement("img");
-    rose.src="https://cdn-icons-png.flaticon.com/512/415/415733.png";
-    rose.className="rose";
-    rose.style.left=Math.random()*100+"%";
-    rose.style.animationDuration=(5+Math.random()*5)+"s";
-    document.body.appendChild(rose);
-}
+/* ANIMACIÓN AL HACER SCROLL */
+const elements = document.querySelectorAll(".fade");
 
-/* BRILLOS */
-for(let i=0;i<30;i++){
-    let s=document.createElement("div");
-    s.className="sparkle";
-    s.style.top=Math.random()*100+"%";
-    s.style.left=Math.random()*100+"%";
-    document.body.appendChild(s);
-}
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
