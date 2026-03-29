@@ -8,90 +8,150 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #000000, #2b1055);
+    scroll-behavior: smooth;
+    background: black;
     color: white;
+}
+
+/* SECCIONES */
+.section {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    position: relative;
 }
 
-.container {
-    text-align: center;
-    animation: fadeIn 3s ease-in-out;
+.section img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+/* TEXTO */
+.content {
+    max-width: 600px;
+    animation: fadeUp 1.5s ease;
 }
 
 h1 {
-    font-size: 2.5em;
-    opacity: 0;
-    animation: showText 4s forwards;
+    font-size: 2.2em;
 }
 
 p {
     margin-top: 20px;
-    font-size: 1.2em;
-    opacity: 0;
-    animation: showText 6s forwards;
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes showText {
-    to { opacity: 1; }
-}
-
+/* BOTÓN */
 button {
     margin-top: 30px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
+    border-radius: 30px;
     background: #ff4d6d;
     color: white;
-    border-radius: 25px;
-    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Siempre fuiste tú...</h1>
-    <p>
-        Aunque el tiempo pasó…  
-        y la vida nos llevó por caminos distintos,  
-        hoy estoy aquí…  
-        porque nunca dejé de sentir lo mismo ❤️
-    </p>
-
-    <button onclick="mostrar()">Toca aquí 💌</button>
-</div>
-
+<!-- AUDIO -->
 <audio id="music" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+<source src="https://www.bensound.com/bensound-music/bensound-love.mp3">
 </audio>
 
-<script>
-function mostrar() {
-    document.getElementById("music").play();
+<!-- INTRO -->
+<div class="section" style="background:black;">
+    <div class="content">
+        <h1>Hay algo que quiero decirte...</h1>
+        <button onclick="start()">Toca aquí ❤️</button>
+    </div>
+</div>
 
-    document.body.innerHTML = `
-    <div class="container">
-        <h1>Hoy tengo una oportunidad...</h1>
+<!-- SECCIÓN 1 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    <div class="content">
+        <h1>El tiempo pasó...</h1>
+        <p>Y aunque la vida nos llevó por caminos distintos...</p>
+    </div>
+</div>
+
+<!-- SECCIÓN 2 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div class="content">
+        <h1>Hubo momentos...</h1>
+        <p>En los que simplemente no coincidimos...</p>
+    </div>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+    <div class="content">
+        <h1>Pero hay algo curioso...</h1>
+        <p>Nunca dejé de pensar en ti ❤️</p>
+    </div>
+</div>
+
+<!-- SECCIÓN 4 -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+    <div class="content">
+        <h1>La vida nos dio otra oportunidad...</h1>
+        <p>Y esta vez… no quiero dejarla pasar.</p>
+    </div>
+</div>
+
+<!-- FINAL -->
+<div class="section">
+    <img src="https://images.unsplash.com/photo-1494783367193-149034c05e8f">
+    <div class="content">
+        <h1>¿Me das la oportunidad?</h1>
         <p>
-        Y no pienso dejarla pasar.<br><br>
-        Porque incluso cuando no estabas…<br>
-        siempre estabas en mí.<br><br>
-        ¿Me das la oportunidad de comenzar algo contigo? ❤️
+        De comenzar algo contigo…<br><br>
+        Sin prisas… pero con verdad ❤️
         </p>
     </div>
-    `;
+</div>
+
+<script>
+function start() {
+    document.getElementById("music").play();
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
 }
 </script>
 
