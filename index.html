@@ -2,7 +2,9 @@
 
 <script>
 function start() {
-    document.getElementById("music").play();
+    const music = document.getElementById("music");
+    if (music) music.play().catch(()=>{});
+    
     window.scrollTo({
         top: window.innerHeight,
         behavior: "smooth"
@@ -10,99 +12,62 @@ function start() {
 }
 
 /* =========================
-   ANIMACIÓN SCROLL PREMIUM
+   ANIMACIÓN SUAVE (SEGURA)
 ========================= */
-const sections = document.querySelectorAll(".section");
+const elements = document.querySelectorAll(".content");
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
 
-            let content = entry.target.querySelector(".content");
-
-            gsap.fromTo(content,
-                { opacity: 0, y: 60, filter: "blur(10px)" },
-                { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.5 }
+            gsap.fromTo(entry.target,
+                { opacity: 0, y: 40 },
+                { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }
             );
-
-            /* EFECTO TEXTO TYPEWRITER */
-            typeWriter(content.querySelector("p"));
 
         }
     });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 
-sections.forEach(sec => observer.observe(sec));
-
-
-/* =========================
-   TYPEWRITER EFECTO
-========================= */
-function typeWriter(element) {
-    if (!element || element.classList.contains("typed")) return;
-
-    element.classList.add("typed");
-
-    let text = element.innerHTML;
-    element.innerHTML = "";
-    let i = 0;
-
-    let interval = setInterval(() => {
-        element.innerHTML += text.charAt(i);
-        i++;
-        if (i >= text.length) clearInterval(interval);
-    }, 25);
-}
-
+elements.forEach(el => observer.observe(el));
 
 /* =========================
-   PARALLAX SUAVE
+   PARALLAX SUAVE (CONTROLADO)
 ========================= */
 window.addEventListener("scroll", () => {
     document.querySelectorAll(".section img").forEach(img => {
-        let speed = 0.2;
-        let offset = window.scrollY * speed;
-        img.style.transform = `translateY(${offset}px) scale(1.1)`;
+        let rect = img.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            let speed = 0.1;
+            let offset = rect.top * speed;
+            img.style.transform = `translateY(${offset}px) scale(1.1)`;
+        }
     });
 });
 
-
 /* =========================
-   CORAZONES SUTILES
+   CORAZONES SUTILES (LIGERO)
 ========================= */
-for(let i=0;i<12;i++){
+for(let i=0;i<8;i++){
     let heart = document.createElement("div");
     heart.innerHTML = "❤️";
     heart.style.position = "fixed";
     heart.style.left = Math.random()*100+"%";
     heart.style.top = "100%";
-    heart.style.fontSize = (12 + Math.random()*12)+"px";
-    heart.style.opacity = 0.3;
-    heart.style.animation = `floatHeart ${6 + Math.random()*5}s linear infinite`;
+    heart.style.fontSize = (12 + Math.random()*8)+"px";
+    heart.style.opacity = 0.25;
+    heart.style.pointerEvents = "none";
+    heart.style.animation = `floatHeart ${8 + Math.random()*4}s linear infinite`;
     document.body.appendChild(heart);
 }
 
-/* ANIMACIÓN CORAZONES */
+/* ANIMACIÓN */
 let style = document.createElement("style");
 style.innerHTML = `
 @keyframes floatHeart {
     from { transform: translateY(0); }
     to { transform: translateY(-120vh); }
-}
-`;
+}`;
 document.head.appendChild(style);
-
-
-/* =========================
-   EFECTO GLOW EN TITULOS
-========================= */
-document.querySelectorAll("h1").forEach(h => {
-    h.addEventListener("mouseenter", () => {
-        h.style.textShadow = "0 0 15px rgba(255,77,109,0.8)";
-    });
-
-    h.addEventListener("mouseleave", () => {
-        h.style.textShadow = "none";
-    });
-});
 </script>
