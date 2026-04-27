@@ -51,33 +51,31 @@ inset:0;
 background:rgba(0,0,0,0.6);
 }
 
-/* CONTENIDO CENTRADO PERFECTO */
+/* CONTENIDO CENTRADO */
 .content{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 width:90%;
-max-width:500px;
+max-width:520px;
 text-align:center;
-color:#ffffff; /* BLANCO */
+color:#fff;
 }
 
-/* TEXTO GRANDE Y LEGIBLE */
+/* TEXTO GRANDE */
 h1{
 font-family:'Playfair Display',serif;
-font-size:clamp(32px,8vw,48px);
+font-size:clamp(34px,8vw,48px);
 margin-bottom:20px;
-color:#fff;
-text-shadow:0 2px 10px rgba(0,0,0,0.8);
+text-shadow:0 2px 12px rgba(0,0,0,0.9);
 }
 
 p{
 font-size:clamp(20px,6vw,26px);
 line-height:1.7;
 margin:12px 0;
-color:#fff;
-text-shadow:0 2px 10px rgba(0,0,0,0.8);
+text-shadow:0 2px 12px rgba(0,0,0,0.9);
 }
 
 /* ANIMACIÓN */
@@ -111,6 +109,24 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
+/* BOTÓN FINAL */
+.btn{
+margin-top:25px;
+padding:14px 28px;
+border-radius:30px;
+background:rgba(255,255,255,0.15);
+color:white;
+border:1px solid rgba(255,255,255,0.3);
+backdrop-filter:blur(6px);
+font-size:18px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+color:black;
+}
+
 </style>
 </head>
 
@@ -119,36 +135,69 @@ animation:pulse 1.5s infinite;
 <div class="swiper">
 <div class="swiper-wrapper">
 
-<!-- 1 -->
+<!-- INTRO -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');"></div>
 <div class="overlay"></div>
 <div class="content">
-<h1 class="line">Hola mi amor 💖</h1>
+<h1 class="line">Mi amor 💖</h1>
 <p class="line">Sé que estás ocupada…</p>
-<p class="line">Pero esto es importante…</p>
+<p class="line">Pero necesitaba decirte algo…</p>
 </div>
 </div>
 
-<!-- 2 -->
+<!-- TEXTO PARTE 1 -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');"></div>
 <div class="overlay"></div>
 <div class="content">
-<p class="line">Entre tantas cosas…</p>
-<p class="line">Quiero que escuches esto…</p>
-<p class="line">Con calma…</p>
+<p class="line">Te conocí hace algunos años atrás…</p>
+<p class="line">Era apenas un niño…</p>
+<p class="line">Pero algo en ti cambió todo en mí…</p>
 </div>
 </div>
 
-<!-- 3 -->
+<!-- TEXTO PARTE 2 -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');"></div>
 <div class="overlay"></div>
 <div class="content">
-<p class="line">Te conocí hace algunos años…</p>
-<p class="line">Y algo en ti se quedó en mí…</p>
-<p class="line">Para siempre…</p>
+<p class="line">Me llené de ilusiones…</p>
+<p class="line">Me enamoré de tu mirada…</p>
+<p class="line">De tu forma de hablar y de tu risa…</p>
+</div>
+</div>
+
+<!-- TEXTO PARTE 3 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');"></div>
+<div class="overlay"></div>
+<div class="content">
+<p class="line">De tus manos…</p>
+<p class="line">De tu cabello…</p>
+<p class="line">De cada detalle que te hace única…</p>
+</div>
+</div>
+
+<!-- TEXTO PARTE 4 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d');"></div>
+<div class="overlay"></div>
+<div class="content">
+<p class="line">Pero mi corazón guardó silencio…</p>
+<p class="line">Porque no supe de ti…</p>
+<p class="line">Y el tiempo pasó…</p>
+</div>
+</div>
+
+<!-- TEXTO PARTE 5 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e');"></div>
+<div class="overlay"></div>
+<div class="content">
+<p class="line">Pasaron los años…</p>
+<p class="line">Y aunque estabas lejos…</p>
+<p class="line">Siempre sentí que algo quedó pendiente…</p>
 </div>
 </div>
 
@@ -157,10 +206,11 @@ animation:pulse 1.5s infinite;
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');"></div>
 <div class="overlay"></div>
 <div class="content">
-<h1 class="line">Y hoy…</h1>
-<p class="line">Sigo sintiendo lo mismo…</p>
-<p class="line">Todo por ti 💖</p>
+<h1 class="line">Porque en el fondo…</h1>
+<p class="line">Siempre supe que eras tú…</p>
+<p class="line">Ese “para siempre” en mi vida 💖</p>
 <div class="heart">❤️</div>
+<button class="btn">Siempre fuiste tú…</button>
 </div>
 </div>
 
