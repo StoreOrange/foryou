@@ -12,74 +12,119 @@
 
 <style>
 
-body {
-    margin: 0;
-    background: #000;
-    font-family: 'Poppins', sans-serif;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:#000;
+font-family:'Poppins',sans-serif;
 }
 
-.swiper {
-    width: 100%;
-    height: 100vh;
+/* CONTENEDOR */
+.swiper{
+width:100%;
+height:100vh;
 }
 
-.slide {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-    color: white;
-    text-align: center;
-    overflow: hidden;
+/* SLIDE */
+.slide{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-/* Fondo elegante */
-.bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.5) blur(3px);
-    transform: scale(1.1);
+/* FONDO */
+.bg{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+filter:brightness(0.5) blur(4px);
+transform:scale(1.1);
 }
 
-/* Capa oscura elegante */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+/* OVERLAY */
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,0.8),rgba(0,0,0,0.4));
 }
 
-/* Contenido */
-.content {
-    position: relative;
-    z-index: 2;
-    max-width: 420px;
+/* CONTENIDO */
+.content{
+position:relative;
+z-index:2;
+width:100%;
+max-width:500px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
-/* Texto */
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3em;
-    margin-bottom: 15px;
+/* TEXTO RESPONSIVO */
+h1{
+font-family:'Playfair Display',serif;
+font-size:clamp(28px,6vw,40px);
+margin-bottom:20px;
 }
 
-.line {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1.5s forwards;
+p{
+font-size:clamp(18px,5vw,22px);
+line-height:1.6;
+margin:10px 0;
 }
 
-.line:nth-child(1) { animation-delay: 1s; }
-.line:nth-child(2) { animation-delay: 3s; }
-.line:nth-child(3) { animation-delay: 5s; }
+/* ANIMACIÓN */
+.line{
+opacity:0;
+transform:translateY(20px);
+animation:fadeUp 1.5s forwards;
+}
 
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.line:nth-child(1){animation-delay:1s}
+.line:nth-child(2){animation-delay:3s}
+.line:nth-child(3){animation-delay:5s}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* CORAZÓN */
+.heart{
+font-size:40px;
+margin-top:20px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+
+/* BOTÓN FINAL */
+.btn{
+margin-top:25px;
+padding:12px 25px;
+border-radius:30px;
+background:rgba(255,255,255,0.15);
+color:white;
+border:1px solid rgba(255,255,255,0.3);
+backdrop-filter:blur(5px);
+font-size:16px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+color:black;
 }
 
 </style>
@@ -90,58 +135,72 @@ h1 {
 <div class="swiper">
 <div class="swiper-wrapper">
 
-<!-- Slide 1 -->
+<!-- 1 -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');"></div>
 <div class="overlay"></div>
 <div class="content">
-    <h1 class="line">Hola mi amor 💖</h1>
-    <p class="line">Sé que estás ocupada…</p>
-    <p class="line">Pero esto es importante…</p>
+<h1 class="line">Hola mi amor 💖</h1>
+<p class="line">Sé que estás ocupada…</p>
+<p class="line">Pero necesitaba robarte un momento…</p>
 </div>
 </div>
 
-<!-- Slide 2 -->
+<!-- 2 -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');"></div>
 <div class="overlay"></div>
 <div class="content">
-    <p class="line">Te conocí hace algunos años…</p>
-    <p class="line">Era un niño aún…</p>
-    <p class="line">Pero algo en ti cambió todo…</p>
+<p class="line">Entre tantas cosas en tu vida…</p>
+<p class="line">Quiero que escuches esto…</p>
+<p class="line">Con calma…</p>
 </div>
 </div>
 
-<!-- Slide 3 -->
+<!-- 3 -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');"></div>
 <div class="overlay"></div>
 <div class="content">
-    <p class="line">Me enamoré de tu mirada…</p>
-    <p class="line">De tu forma de hablar…</p>
-    <p class="line">Y de tu risa…</p>
+<p class="line">Te conocí hace algunos años…</p>
+<p class="line">Y aunque era un niño…</p>
+<p class="line">Algo en ti se quedó en mí…</p>
 </div>
 </div>
 
-<!-- Slide 4 -->
+<!-- 4 -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');"></div>
 <div class="overlay"></div>
 <div class="content">
-    <p class="line">Pasaron los años…</p>
-    <p class="line">Y aún sin verte…</p>
-    <p class="line">Nunca dejé de sentirlo…</p>
+<p class="line">Me enamoré de tu mirada…</p>
+<p class="line">De tu forma de hablar…</p>
+<p class="line">Y de tu risa…</p>
 </div>
 </div>
 
-<!-- Slide final -->
+<!-- 5 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d');"></div>
+<div class="overlay"></div>
+<div class="content">
+<p class="line">Pasó el tiempo…</p>
+<p class="line">Y aunque no estabas…</p>
+<p class="line">Nunca dejé de sentirlo…</p>
+</div>
+</div>
+
+<!-- FINAL -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');"></div>
 <div class="overlay"></div>
 <div class="content">
-    <h1 class="line">Y hoy…</h1>
-    <p class="line">Sigo aquí…</p>
-    <p class="line">Sintiendo lo mismo por ti 💖</p>
+<h1 class="line">Y hoy…</h1>
+<p class="line">Sigo aquí…</p>
+<p class="line">Sintiéndolo todo por ti 💖</p>
+<div class="heart">❤️</div>
+
+<button class="btn">Siempre fuiste tú…</button>
 </div>
 </div>
 
@@ -151,13 +210,13 @@ h1 {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-new Swiper('.swiper', {
-    effect: 'fade',
-    speed: 2000,
-    autoplay: {
-        delay: 8000, // MÁS LENTO
-        disableOnInteraction: false
-    }
+new Swiper('.swiper',{
+effect:'fade',
+speed:2000,
+autoplay:{
+delay:9000,
+disableOnInteraction:false
+}
 });
 </script>
 
