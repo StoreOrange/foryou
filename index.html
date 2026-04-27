@@ -7,7 +7,6 @@
 <title>Para Ti 💖</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400&display=swap" rel="stylesheet">
 
 <style>
@@ -51,7 +50,7 @@ inset:0;
 background:rgba(0,0,0,0.6);
 }
 
-/* CONTENIDO CENTRADO */
+/* CONTENIDO */
 .content{
 position:absolute;
 top:50%;
@@ -63,7 +62,7 @@ text-align:center;
 color:#fff;
 }
 
-/* TEXTO GRANDE */
+/* TEXTO */
 h1{
 font-family:'Playfair Display',serif;
 font-size:clamp(34px,8vw,48px);
@@ -78,16 +77,21 @@ margin:12px 0;
 text-shadow:0 2px 12px rgba(0,0,0,0.9);
 }
 
+/* ICONOS */
+.icon{
+margin-right:8px;
+}
+
 /* ANIMACIÓN */
 .line{
 opacity:0;
 transform:translateY(25px);
-animation:fadeUp 1.6s forwards;
+animation:fadeUp 1.2s forwards;
 }
 
-.line:nth-child(1){animation-delay:1s}
-.line:nth-child(2){animation-delay:3s}
-.line:nth-child(3){animation-delay:5s}
+.line:nth-child(1){animation-delay:0.8s}
+.line:nth-child(2){animation-delay:2.2s}
+.line:nth-child(3){animation-delay:3.6s}
 
 @keyframes fadeUp{
 to{
@@ -109,9 +113,9 @@ animation:pulse 1.5s infinite;
 100%{transform:scale(1)}
 }
 
-/* BOTÓN FINAL */
+/* BOTONES */
 .btn{
-margin-top:25px;
+margin-top:20px;
 padding:14px 28px;
 border-radius:30px;
 background:rgba(255,255,255,0.15);
@@ -120,6 +124,7 @@ border:1px solid rgba(255,255,255,0.3);
 backdrop-filter:blur(6px);
 font-size:18px;
 transition:0.3s;
+cursor:pointer;
 }
 
 .btn:hover{
@@ -140,64 +145,53 @@ color:black;
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');"></div>
 <div class="overlay"></div>
 <div class="content">
-<h1 class="line">Mi amor 💖</h1>
-<p class="line">Sé que estás ocupada…</p>
-<p class="line">Pero necesitaba decirte algo…</p>
+<h1 class="line">💖 Mi amor</h1>
+<p class="line"><span class="icon">✨</span>Sé que estás ocupada…</p>
+<p class="line"><span class="icon">💌</span>Pero necesitaba decirte algo…</p>
 </div>
 </div>
 
-<!-- TEXTO PARTE 1 -->
+<!-- SLIDE -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');"></div>
 <div class="overlay"></div>
 <div class="content">
-<p class="line">Te conocí hace algunos años atrás…</p>
-<p class="line">Era apenas un niño…</p>
-<p class="line">Pero algo en ti cambió todo en mí…</p>
+<p class="line">🌙 Te conocí hace algunos años atrás…</p>
+<p class="line">👦 Era apenas un niño…</p>
+<p class="line">💫 Pero algo en ti cambió todo en mí…</p>
 </div>
 </div>
 
-<!-- TEXTO PARTE 2 -->
+<!-- SLIDE -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');"></div>
 <div class="overlay"></div>
 <div class="content">
-<p class="line">Me llené de ilusiones…</p>
-<p class="line">Me enamoré de tu mirada…</p>
-<p class="line">De tu forma de hablar y de tu risa…</p>
+<p class="line">✨ Me llené de ilusiones…</p>
+<p class="line">👀 Me enamoré de tu mirada…</p>
+<p class="line">😂 De tu risa…</p>
 </div>
 </div>
 
-<!-- TEXTO PARTE 3 -->
+<!-- SLIDE -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');"></div>
 <div class="overlay"></div>
 <div class="content">
-<p class="line">De tus manos…</p>
-<p class="line">De tu cabello…</p>
-<p class="line">De cada detalle que te hace única…</p>
+<p class="line">🤲 De tus manos…</p>
+<p class="line">🌸 De tu cabello…</p>
+<p class="line">💖 De cada detalle tuyo…</p>
 </div>
 </div>
 
-<!-- TEXTO PARTE 4 -->
+<!-- SLIDE -->
 <div class="swiper-slide slide">
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d');"></div>
 <div class="overlay"></div>
 <div class="content">
-<p class="line">Pero mi corazón guardó silencio…</p>
-<p class="line">Porque no supe de ti…</p>
-<p class="line">Y el tiempo pasó…</p>
-</div>
-</div>
-
-<!-- TEXTO PARTE 5 -->
-<div class="swiper-slide slide">
-<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e');"></div>
-<div class="overlay"></div>
-<div class="content">
-<p class="line">Pasaron los años…</p>
-<p class="line">Y aunque estabas lejos…</p>
-<p class="line">Siempre sentí que algo quedó pendiente…</p>
+<p class="line">🤍 Pero mi corazón guardó silencio…</p>
+<p class="line">⏳ Porque no supe de ti…</p>
+<p class="line">🌫️ Y el tiempo pasó…</p>
 </div>
 </div>
 
@@ -206,11 +200,13 @@ color:black;
 <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');"></div>
 <div class="overlay"></div>
 <div class="content">
-<h1 class="line">Porque en el fondo…</h1>
-<p class="line">Siempre supe que eras tú…</p>
-<p class="line">Ese “para siempre” en mi vida 💖</p>
+<h1 class="line">💫 Porque en el fondo…</h1>
+<p class="line">❤️ Siempre supe que eras tú…</p>
+<p class="line">💍 Ese “para siempre” en mi vida</p>
+
 <div class="heart">❤️</div>
-<button class="btn">Siempre fuiste tú…</button>
+
+<button class="btn" onclick="reiniciar()">🔁 Volver a ver</button>
 </div>
 </div>
 
@@ -220,14 +216,20 @@ color:black;
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-new Swiper('.swiper',{
+let swiper = new Swiper('.swiper',{
 effect:'fade',
-speed:2000,
+speed:1500,
 autoplay:{
-delay:9000,
+delay:6000,
 disableOnInteraction:false
 }
 });
+
+/* REINICIAR */
+function reiniciar(){
+swiper.slideTo(0,1000);
+swiper.autoplay.start();
+}
 </script>
 
 </body>
