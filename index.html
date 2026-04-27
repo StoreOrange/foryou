@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para ti 💖</title>
 
-<!-- Swiper -->
+<title>Para Ti 💖</title>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
     background: #000;
+    font-family: 'Poppins', sans-serif;
 }
 
 .swiper {
@@ -24,171 +24,139 @@ body {
 }
 
 .slide {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    text-align: center;
+    padding: 25px;
     color: white;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    text-align: center;
+    overflow: hidden;
 }
 
+/* Fondo elegante */
+.bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5) blur(3px);
+    transform: scale(1.1);
+}
+
+/* Capa oscura elegante */
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
 }
 
+/* Contenido */
 .content {
     position: relative;
     z-index: 2;
-    animation: fadeIn 2s ease;
+    max-width: 420px;
 }
 
+/* Texto */
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
+    font-size: 2.3em;
+    margin-bottom: 15px;
 }
 
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    max-width: 400px;
+.line {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1.5s forwards;
 }
 
-.heart {
-    font-size: 30px;
-    margin-top: 20px;
-    animation: pulse 1.5s infinite;
+.line:nth-child(1) { animation-delay: 1s; }
+.line:nth-child(2) { animation-delay: 3s; }
+.line:nth-child(3) { animation-delay: 5s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes pulse {
-    0% {transform: scale(1);}
-    50% {transform: scale(1.2);}
-    100% {transform: scale(1);}
-}
 </style>
 </head>
 
 <body>
 
 <div class="swiper">
-  <div class="swiper-wrapper">
+<div class="swiper-wrapper">
 
-    <!-- Slide 1 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
-      <div class="overlay"></div>
-      <div class="content">
-        <h1>Hola mi amor 💖</h1>
-        <p>Sé que estás ocupada…</p>
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Y entre tantas cosas…</p>
-        <p>Quiero decirte algo importante…</p>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Te conocí hace algunos años atrás…</p>
-        <p>Era un niño aún…</p>
-      </div>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Pero te vi…</p>
-        <p>Y me llené de ilusiones…</p>
-      </div>
-    </div>
-
-    <!-- Slide 5 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1501426026826-31c667bdf23d');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Me enamoré de tu mirada…</p>
-        <p>De tu forma de hablar…</p>
-        <p>Y hasta de tu risa…</p>
-      </div>
-    </div>
-
-    <!-- Slide 6 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1517487881594-2787fef5ebf7');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Me enamoré de tus manos…</p>
-        <p>De tu cabello…</p>
-      </div>
-    </div>
-
-    <!-- Slide 7 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Pero mi corazón enmudeció ese amor…</p>
-        <p>Porque no supe de ti…</p>
-      </div>
-    </div>
-
-    <!-- Slide 8 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Pasaron los años…</p>
-        <p>Y aún sabiendo que por ahí andabas…</p>
-      </div>
-    </div>
-
-    <!-- Slide 9 -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d');">
-      <div class="overlay"></div>
-      <div class="content">
-        <p>Siempre sentí que algo quedó en espera…</p>
-        <p>Que tú eras ese “para siempre”…</p>
-      </div>
-    </div>
-
-    <!-- Final -->
-    <div class="swiper-slide slide" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429');">
-      <div class="overlay"></div>
-      <div class="content">
-        <h1>Y hoy… 💖</h1>
-        <p>Solo quiero decirte…</p>
-        <p>Que nunca dejé de sentirlo…</p>
-        <div class="heart">❤️</div>
-      </div>
-    </div>
-
-  </div>
+<!-- Slide 1 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');"></div>
+<div class="overlay"></div>
+<div class="content">
+    <h1 class="line">Hola mi amor 💖</h1>
+    <p class="line">Sé que estás ocupada…</p>
+    <p class="line">Pero esto es importante…</p>
+</div>
 </div>
 
-<!-- JS -->
+<!-- Slide 2 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');"></div>
+<div class="overlay"></div>
+<div class="content">
+    <p class="line">Te conocí hace algunos años…</p>
+    <p class="line">Era un niño aún…</p>
+    <p class="line">Pero algo en ti cambió todo…</p>
+</div>
+</div>
+
+<!-- Slide 3 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');"></div>
+<div class="overlay"></div>
+<div class="content">
+    <p class="line">Me enamoré de tu mirada…</p>
+    <p class="line">De tu forma de hablar…</p>
+    <p class="line">Y de tu risa…</p>
+</div>
+</div>
+
+<!-- Slide 4 -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');"></div>
+<div class="overlay"></div>
+<div class="content">
+    <p class="line">Pasaron los años…</p>
+    <p class="line">Y aún sin verte…</p>
+    <p class="line">Nunca dejé de sentirlo…</p>
+</div>
+</div>
+
+<!-- Slide final -->
+<div class="swiper-slide slide">
+<div class="bg" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');"></div>
+<div class="overlay"></div>
+<div class="content">
+    <h1 class="line">Y hoy…</h1>
+    <p class="line">Sigo aquí…</p>
+    <p class="line">Sintiendo lo mismo por ti 💖</p>
+</div>
+</div>
+
+</div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-const swiper = new Swiper('.swiper', {
+new Swiper('.swiper', {
     effect: 'fade',
     speed: 2000,
     autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
+        delay: 8000, // MÁS LENTO
+        disableOnInteraction: false
     }
 });
 </script>
